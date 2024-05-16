@@ -17,3 +17,22 @@ allTables.forEach((table) => {
         }
     })
 });
+
+function format(cpf) {
+    cpf = cpf.replace(/\D/g, ''); // remove tudo que não é número
+    if (cpf.length > 11) { // tem mais dígitos que um CPF, o que fazer?
+        // poderia dar erro, mas estou pegando os 11 primeiros e ignorando o resto
+        cpf = cpf.substring(0, 11);
+    }
+    var dv = cpf.substring(9); // se tem dígitos verificadores, inclui o hífen
+    if (dv.length > 0) {
+        dv = '-' + dv;
+    }
+
+    return cpf.substring(0, 9).split(/(?=(?:\d{3}){0,3}$)/).join('.') + dv;
+}
+
+var cpfInput = document.querySelector('#cpf');
+cpfInput.addEventListener('input', function() {
+    cpfInput.value = format(cpfInput.value);
+});
