@@ -1,11 +1,15 @@
 body{
     background-image: linear-gradient(250deg, #BF0E28 0%, #87101E 100%) !important;
-    padding: 0;
-    margin: 0;
+    padding: 1%;
     width: 100%;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+body::-webkit-scrollbar {
+    display: none;
 }
 
 li{
@@ -40,16 +44,18 @@ ul{
     align-items: center;
     border-radius: 3%;
     max-width: 450px;
+    margin: auto;
+    padding: 1rem;
 }
 
 
 #container{
     width: 75%;
     display: flex;
+    flex-direction: column;
     background-color: white;
     justify-content: center;
     align-items: center;
-    margin-top: 7%;
     border-radius: 12px;
     padding: 1rem;
 }
@@ -80,7 +86,8 @@ form div{
     width: 50%;
 }
 
-form label{ 
+form label,
+.mesas h1{ 
     color: #BF0E28;
 }
 
@@ -91,3 +98,39 @@ form div label{
 form div input{
     width: 45%;
 }
+
+#container .mesas{
+    display: block;
+}
+
+button[type=submit]{
+    width: 400px;
+    display: block;
+    margin: 0 auto;
+    height: 40px;
+    background-color: #87101E;
+    color: white;
+
+}
+
+button[type=submit]:hover{
+    background-color: #ffffff;
+    border: 1px solid #87101E;
+    color: #87101E;
+}
+
+.mesas{
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    width: 100%;
+}
+
+.mesas h1{
+    margin: 0;
+    padding: 0;
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
